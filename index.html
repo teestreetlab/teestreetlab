@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeeStreetLab | Official Store & Drops</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#FF5722',
+                            dark: '#0F172A',
+                            surface: '#1E293B',
+                            light: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glow-effect {
+            box-shadow: 0 4px 20px -2px rgba(255, 87, 34, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-[#0b0f19] text-slate-200 min-h-screen font-sans antialiased selection:bg-brand-orange selection:text-white">
+
+    <!-- Container: Max-w-md مخصص لظهور مثالي كصفحة Link-in-bio على الموبايل -->
+    <main class="max-w-md mx-auto px-4 py-8 flex flex-col items-center">
+
+        <!-- Header / Bio Section -->
+        <header class="text-center flex flex-col items-center w-full mb-6">
+            <!-- Brand Avatar / Logo -->
+            <div class="relative mb-4">
+                <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-brand-orange to-amber-500 p-1 glow-effect">
+                    <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center border-2 border-slate-800">
+                        <!-- يمكنك لاحقاً استبدال هذا برابط لوجو متجرك -->
+                        <i class="fa-solid fa-shirt text-3xl text-brand-orange"></i>
+                    </div>
+                </div>
+                <span class="absolute bottom-1 right-1 bg-green-500 w-4 h-4 rounded-full border-2 border-slate-900" title="Store Open"></span>
+            </div>
+
+            <!-- Brand Name & Bio -->
+            <h1 class="font-display font-bold text-2xl tracking-tight text-white mb-1">TeeStreetLab</h1>
+            <p class="text-xs font-semibold uppercase tracking-widest text-brand-orange mb-2">Streetwear & Graphic Apparel</p>
+            <p class="text-sm text-slate-400 max-w-xs leading-relaxed">
+                Unique print-on-demand designs crafted for everyday street culture. Worldwide shipping via TeePublic.
+            </p>
+        </header>
+
+        <!-- Primary Call to Action Button -->
+        <section class="w-full mb-6">
+            <a href="https://www.teepublic.com" target="_blank" rel="noopener noreferrer"
+               class="flex items-center justify-center gap-3 w-full bg-gradient-to-r from-brand-orange to-orange-600 hover:from-orange-600 hover:to-brand-orange text-white font-semibold py-3.5 px-6 rounded-2xl shadow-lg glow-effect transition-all duration-300 transform active:scale-95">
+                <i class="fa-solid fa-bag-shopping text-lg"></i>
+                <span>Explore Full Store on TeePublic</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-75"></i>
+            </a>
+        </section>
+
+        <!-- Featured Designs Showcase Grid -->
+        <section class="w-full mb-8">
+            <div class="flex items-center justify-between mb-3 px-1">
+                <h2 class="font-display font-semibold text-sm uppercase tracking-wider text-slate-400">Featured Drops</h2>
+                <span class="text-[11px] bg-slate-800 text-amber-400 px-2 py-0.5 rounded-full border border-slate-700">New Arrivals</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3.5">
+                <!-- Product Card 1 -->
+                <a href="https://www.teepublic.com" target="_blank" rel="noopener noreferrer" 
+                   class="group bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden hover:border-brand-orange/60 transition-all duration-300 flex flex-col">
+                    <div class="aspect-square bg-slate-800/60 relative overflow-hidden flex items-center justify-center">
+                        <!-- صورة افتراضية: استبدل الرابط برابط صورة تصميمك -->
+                        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=400&q=80" 
+                             alt="Urban Minimal Tee" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-2 right-2 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-0.5 rounded-md">Tee</span>
+                    </div>
+                    <div class="p-3 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-medium text-xs text-white line-clamp-1 group-hover:text-brand-orange transition-colors">Urban Minimal Graphic</h3>
+                            <p class="text-[11px] text-slate-400 mt-0.5">Classic Heavyweight</p>
+                        </div>
+                        <div class="mt-3 flex items-center justify-between">
+                            <span class="text-xs font-bold text-white">$22</span>
+                            <span class="text-[11px] font-medium text-brand-orange group-hover:underline flex items-center gap-1">
+                                Buy <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Product Card 2 -->
+                <a href="https://www.teepublic.com" target="_blank" rel="noopener noreferrer" 
+                   class="group bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden hover:border-brand-orange/60 transition-all duration-300 flex flex-col">
+                    <div class="aspect-square bg-slate-800/60 relative overflow-hidden flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80" 
+                             alt="Vintage Street Tee" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-2 right-2 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-0.5 rounded-md">Hoodie</span>
+                    </div>
+                    <div class="p-3 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-medium text-xs text-white line-clamp-1 group-hover:text-brand-orange transition-colors">Vintage Street Lab</h3>
+                            <p class="text-[11px] text-slate-400 mt-0.5">Premium Pullover</p>
+                        </div>
+                        <div class="mt-3 flex items-center justify-between">
+                            <span class="text-xs font-bold text-white">$45</span>
+                            <span class="text-[11px] font-medium text-brand-orange group-hover:underline flex items-center gap-1">
+                                Buy <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Social Media Direct Links -->
+        <section class="w-full flex flex-col items-center gap-3 pt-2 pb-6 border-t border-slate-800/80">
+            <span class="text-[11px] uppercase tracking-wider text-slate-400 font-medium">Follow The Lab</span>
+            <div class="flex items-center gap-4">
+                <!-- Pinterest -->
+                <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" 
+                   class="w-11 h-11 rounded-full bg-slate-800/90 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-red-500 hover:border-red-500/50 transition-all transform hover:-translate-y-1">
+                    <i class="fa-brands fa-pinterest-p text-lg"></i>
+                </a>
+                <!-- Instagram -->
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+                   class="w-11 h-11 rounded-full bg-slate-800/90 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-pink-500 hover:border-pink-500/50 transition-all transform hover:-translate-y-1">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                </a>
+                <!-- TikTok -->
+                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" 
+                   class="w-11 h-11 rounded-full bg-slate-800/90 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition-all transform hover:-translate-y-1">
+                    <i class="fa-brands fa-tiktok text-lg"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-xs text-slate-400">
+            <p>© 2026 TeeStreetLab. Powered by TeePublic.</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
