@@ -9,7 +9,7 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -23,8 +23,8 @@
                         brand: {
                             orange: '#FF5722',
                             dark: '#0B0F19',
-                            card: '#151C2C',
-                            border: '#232D42'
+                            card: '#131A29',
+                            border: '#1E293B'
                         }
                     }
                 }
@@ -32,161 +32,217 @@
         }
     </script>
     <style>
-        .glow-effect {
-            box-shadow: 0 4px 20px -2px rgba(255, 87, 34, 0.35);
-        }
-        .pulse-subtle {
-            animation: pulse-border 2s infinite;
-        }
-        @keyframes pulse-border {
-            0%, 100% { border-color: rgba(255, 87, 34, 0.4); }
-            50% { border-color: rgba(255, 87, 34, 0.8); }
-        }
+        /* إخفاء شريط التمرير العادي للحفاظ على مظهر التطبيقات الحديثة */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glow-logo { box-shadow: 0 0 25px -4px rgba(255, 87, 34, 0.45); }
+        .glow-cta { box-shadow: 0 6px 20px -3px rgba(255, 87, 34, 0.4); }
     </style>
 </head>
 <body class="bg-[#0b0f19] text-slate-200 min-h-screen font-sans antialiased selection:bg-brand-orange selection:text-white">
 
-    <main class="max-w-md mx-auto px-4 py-8 flex flex-col items-center">
+    <main class="max-w-md mx-auto px-4 py-7 flex flex-col items-center">
 
-        <!-- Header / Brand Identity -->
-        <header class="text-center flex flex-col items-center w-full mb-6">
-            <div class="relative mb-4">
-                <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-brand-orange via-orange-500 to-amber-500 p-1 glow-effect">
-                    <div class="w-full h-full rounded-full bg-[#0b0f19] flex items-center justify-center border-2 border-slate-800">
-                        <i class="fa-solid fa-shirt text-3xl text-brand-orange"></i>
-                    </div>
+        <!-- Store Header & Logo -->
+        <header class="text-center flex flex-col items-center w-full mb-5">
+            <div class="relative mb-3.5">
+                <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-brand-orange via-orange-500 to-amber-500 p-0.5 glow-logo">
+                    <img src="./logo.png" 
+                         alt="TeeStreetLab Logo" 
+                         class="w-full h-full rounded-full object-cover bg-slate-900 border-2 border-slate-900"
+                         onerror="this.src='https://via.placeholder.com/320?text=TeeStreetLab'">
                 </div>
                 <span class="absolute bottom-1 right-1 bg-emerald-500 w-4 h-4 rounded-full border-2 border-[#0b0f19]" title="Store Open"></span>
             </div>
 
-            <h1 class="font-display font-bold text-2xl tracking-tight text-white mb-1">TeeStreetLab</h1>
-            <p class="text-xs font-semibold uppercase tracking-widest text-brand-orange mb-2">Streetwear & Graphic Apparel</p>
+            <h1 class="font-display font-bold text-2xl tracking-tight text-white mb-0.5">TeeStreetLab</h1>
+            <p class="text-[11px] font-semibold uppercase tracking-widest text-brand-orange mb-2">Streetwear & Graphic Apparel</p>
             <p class="text-xs text-slate-400 max-w-xs leading-relaxed">
-                Premium urban apparel & unique graphic drops. Worldwide delivery printed on demand by TeePublic.
+                Unique print-on-demand drops tailored for everyday lifestyle & passions. Worldwide shipping via TeePublic.
             </p>
         </header>
 
         <!-- Primary CTA: Main Store Link -->
         <section class="w-full mb-6">
             <a href="https://www.teepublic.com" target="_blank" rel="noopener noreferrer"
-               class="flex items-center justify-center gap-3 w-full bg-gradient-to-r from-brand-orange to-orange-600 hover:from-orange-600 hover:to-brand-orange text-white font-semibold py-3.5 px-6 rounded-2xl shadow-lg glow-effect transition-all duration-300 transform active:scale-95">
-                <i class="fa-solid fa-bag-shopping text-lg"></i>
+               class="flex items-center justify-center gap-2.5 w-full bg-gradient-to-r from-brand-orange to-orange-600 hover:from-orange-600 hover:to-brand-orange text-white font-semibold py-3.5 px-6 rounded-2xl glow-cta transition-all duration-300 transform active:scale-95">
+                <i class="fa-solid fa-bag-shopping text-base"></i>
                 <span>Explore Full Store on TeePublic</span>
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-75"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-75 ml-1"></i>
             </a>
         </section>
 
-        <!-- Product Grid Header -->
-        <section class="w-full mb-8">
-            <div class="flex items-center justify-between mb-3 px-1">
-                <h2 class="font-display font-semibold text-xs uppercase tracking-wider text-slate-400">Featured Drops</h2>
-                <span class="text-[10px] bg-brand-orange/10 text-brand-orange font-semibold px-2 py-0.5 rounded-full border border-brand-orange/30">
-                    <i class="fa-solid fa-tag text-[9px] mr-1"></i>Deals Applied At Checkout
-                </span>
+        <!-- Albums Horizontal Filter (Mobile-First Swipe) -->
+        <section class="w-full mb-4">
+            <div class="flex items-center justify-between mb-2.5 px-1">
+                <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Filter By Album</span>
+                <span id="items-counter" class="text-[10px] text-brand-orange font-medium bg-brand-orange/10 px-2 py-0.5 rounded-full border border-brand-orange/20">Showing All</span>
             </div>
+            
+            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 px-0.5 -mx-1 text-xs">
+                <button onclick="filterAlbum('all')" data-album="all" class="album-btn active whitespace-nowrap px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 bg-brand-orange text-white shadow-md">
+                    All
+                </button>
+                <button onclick="filterAlbum('Nurse Life & Scrub Club')" data-album="Nurse Life & Scrub Club" class="album-btn whitespace-nowrap px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 bg-slate-800/90 text-slate-300 border border-slate-700/60 hover:border-brand-orange/50">
+                    Nurse
+                </button>
+                <button onclick="filterAlbum('Camp, Hike & Wilderness')" data-album="Camp, Hike & Wilderness" class="album-btn whitespace-nowrap px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 bg-slate-800/90 text-slate-300 border border-slate-700/60 hover:border-brand-orange/50">
+                    Camping
+                </button>
+                <button onclick="filterAlbum('Iron & Sweat Club')" data-album="Iron & Sweat Club" class="album-btn whitespace-nowrap px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 bg-slate-800/90 text-slate-300 border border-slate-700/60 hover:border-brand-orange/50">
+                    Gym
+                </button>
+                <button onclick="filterAlbum('The Book Club & Cozy Reads')" data-album="The Book Club & Cozy Reads" class="album-btn whitespace-nowrap px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 bg-slate-800/90 text-slate-300 border border-slate-700/60 hover:border-brand-orange/50">
+                    Books
+                </button>
+                <button onclick="filterAlbum('Powered By Caffeine')" data-album="Powered By Caffeine" class="album-btn whitespace-nowrap px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 bg-slate-800/90 text-slate-300 border border-slate-700/60 hover:border-brand-orange/50">
+                    Coffee
+                </button>
+                <button onclick="filterAlbum('Dev Life & Coding Humor')" data-album="Dev Life & Coding Humor" class="album-btn whitespace-nowrap px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 bg-slate-800/90 text-slate-300 border border-slate-700/60 hover:border-brand-orange/50">
+                    Coding
+                </button>
+                <button onclick="filterAlbum('Level Up & Gamer Club')" data-album="Level Up & Gamer Club" class="album-btn whitespace-nowrap px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 bg-slate-800/90 text-slate-300 border border-slate-700/60 hover:border-brand-orange/50">
+                    Gaming
+                </button>
+            </div>
+        </section>
 
-            <!-- Dynamic Products Grid -->
-            <div id="products-grid" class="grid grid-cols-2 gap-3.5">
-                <!-- Skeleton / Loading State -->
+        <!-- Product Grid Container -->
+        <section class="w-full mb-8">
+            <div id="products-grid" class="grid grid-cols-2 gap-3">
                 <div id="loading-state" class="col-span-2 text-center py-12">
                     <i class="fa-solid fa-circle-notch fa-spin text-brand-orange text-2xl mb-2"></i>
-                    <p class="text-xs text-slate-500">Loading catalog...</p>
+                    <p class="text-xs text-slate-400">Loading catalog...</p>
                 </div>
             </div>
         </section>
 
         <!-- Social Channels -->
-        <section class="w-full flex flex-col items-center gap-3 pt-2 pb-6 border-t border-slate-800/80">
-            <span class="text-[11px] uppercase tracking-wider text-slate-500 font-medium">Follow The Lab</span>
+        <section class="w-full flex flex-col items-center gap-3 pt-4 pb-6 border-t border-slate-800/80">
+            <span class="text-[11px] uppercase tracking-wider text-slate-400 font-medium">Follow The Lab</span>
             <div class="flex items-center gap-4">
                 <!-- Pinterest -->
-                <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" 
-                   aria-label="Pinterest"
-                   class="w-11 h-11 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-red-500 hover:border-red-500/50 transition-all transform hover:-translate-y-1">
+                <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"
+                   class="w-11 h-11 rounded-full bg-slate-800/90 border border-slate-700/80 flex items-center justify-center text-slate-300 hover:text-red-500 hover:border-red-500/50 transition-all transform hover:-translate-y-1">
                     <i class="fa-brands fa-pinterest-p text-lg"></i>
                 </a>
                 <!-- Instagram -->
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
-                   aria-label="Instagram"
-                   class="w-11 h-11 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-pink-500 hover:border-pink-500/50 transition-all transform hover:-translate-y-1">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                   class="w-11 h-11 rounded-full bg-slate-800/90 border border-slate-700/80 flex items-center justify-center text-slate-300 hover:text-pink-500 hover:border-pink-500/50 transition-all transform hover:-translate-y-1">
                     <i class="fa-brands fa-instagram text-lg"></i>
                 </a>
                 <!-- TikTok -->
-                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" 
-                   aria-label="TikTok"
-                   class="w-11 h-11 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400/50 transition-all transform hover:-translate-y-1">
+                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok"
+                   class="w-11 h-11 rounded-full bg-slate-800/90 border border-slate-700/80 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition-all transform hover:-translate-y-1">
                     <i class="fa-brands fa-tiktok text-lg"></i>
                 </a>
             </div>
         </section>
 
-        <!-- Minimal Footer -->
-        <footer class="text-center text-xs text-slate-500">
+        <!-- Footer -->
+        <footer class="text-center text-xs text-slate-400 pb-2">
             <p>© 2026 TeeStreetLab. Powered by TeePublic.</p>
         </footer>
 
     </main>
 
-    <!-- JavaScript Engine: Fetching products.json -->
+    <!-- App Engine Script -->
     <script>
+        let allProducts = [];
+
         document.addEventListener('DOMContentLoaded', () => {
-            const grid = document.getElementById('products-grid');
-            
-            // إضافة timestamp لتجاوز الكاش وضمان سحب أحدث نسخة فوراً عند أي تعديل
             fetch('./products.json?v=' + new Date().getTime())
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Failed to load products.json');
-                    }
-                    return response.json();
+                .then(res => {
+                    if (!res.ok) throw new Error('Could not load products.json');
+                    return res.json();
                 })
-                .then(products => {
-                    grid.innerHTML = ''; // مسح مؤشر التحميل
-
-                    if (!products || products.length === 0) {
-                        grid.innerHTML = '<p class="col-span-2 text-center text-xs text-slate-500 py-6">No products found.</p>';
-                        return;
-                    }
-
-                    products.forEach(item => {
-                        // معالجة عرض السعر بمرونة
-                        const priceDisplay = item.price ? item.price : 'Check Price';
-                        const categoryDisplay = item.category ? item.category : 'Tee';
-
-                        const cardHTML = `
-                            <a href="${item.link}" target="_blank" rel="noopener noreferrer" 
-                               class="group bg-slate-900/90 border border-slate-800/90 rounded-2xl overflow-hidden hover:border-brand-orange/60 transition-all duration-300 flex flex-col">
-                                <div class="aspect-square bg-slate-800/40 relative overflow-hidden flex items-center justify-center">
-                                    <img src="${item.image}" 
-                                         alt="${item.title}" 
-                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                         loading="lazy"
-                                         onerror="this.src='https://via.placeholder.com/400x400?text=TeeStreetLab'">
-                                    <span class="absolute top-2 right-2 bg-black/65 backdrop-blur-md text-slate-200 text-[10px] font-bold px-2 py-0.5 rounded-md border border-white/10">
-                                        ${categoryDisplay}
-                                    </span>
-                                </div>
-                                <div class="p-3 flex flex-col flex-grow justify-between gap-2">
-                                    <h3 class="font-medium text-xs text-white line-clamp-1 group-hover:text-brand-orange transition-colors">
-                                        ${item.title}
-                                    </h3>
-                                    <div class="flex items-center justify-between pt-1 border-t border-slate-800/60">
-                                        <span class="text-xs font-semibold text-slate-300">${priceDisplay}</span>
-                                        <span class="text-[11px] font-semibold text-brand-orange group-hover:translate-x-0.5 transition-transform flex items-center gap-1">
-                                            Shop <i class="fa-solid fa-chevron-right text-[8px]"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
-                        `;
-                        grid.innerHTML += cardHTML;
-                    });
+                .then(data => {
+                    allProducts = data;
+                    renderProducts(allProducts);
                 })
                 .catch(err => {
-                    console.error(err);
-                    grid.innerHTML = '<p class="col-span-2 text-center text-xs text-red-400 py-6">Could not load products. Please ensure products.json exists.</p>';
+                    document.getElementById('products-grid').innerHTML = 
+                        '<p class="col-span-2 text-center text-xs text-red-400 py-6">Could not load designs. Ensure products.json exists.</p>';
                 });
         });
+
+        function renderProducts(products) {
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = '';
+
+            if (!products || products.length === 0) {
+                grid.innerHTML = '<p class="col-span-2 text-center text-xs text-slate-400 py-8">No designs found in this album.</p>';
+                return;
+            }
+
+            products.forEach(item => {
+                const price = item.price || 'View Deal';
+                const category = item.category || 'Tee';
+                const albumName = item.album || 'Featured Drop';
+
+                const card = `
+                    <a href="${item.link}" target="_blank" rel="noopener noreferrer" 
+                       class="group bg-[#131a29] border border-slate-800/90 rounded-2xl overflow-hidden hover:border-brand-orange/60 transition-all duration-300 flex flex-col shadow-sm">
+                        
+                        <!-- Product Image & Badges -->
+                        <div class="aspect-square bg-slate-900/60 relative overflow-hidden flex items-center justify-center">
+                            <img src="${item.image}" 
+                                 alt="${item.title}" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                 loading="lazy"
+                                 onerror="this.src='https://via.placeholder.com/400x400?text=Design'">
+                            
+                            <span class="absolute top-2 right-2 bg-black/70 backdrop-blur-md text-slate-200 text-[9px] font-bold px-2 py-0.5 rounded-md border border-white/10">
+                                ${category}
+                            </span>
+                        </div>
+
+                        <!-- Card Content -->
+                        <div class="p-3 flex flex-col flex-grow justify-between gap-1.5">
+                            <div>
+                                <span class="text-[9px] font-semibold text-brand-orange uppercase tracking-wider block truncate mb-0.5">
+                                    ${albumName}
+                                </span>
+                                <h3 class="font-medium text-xs text-white line-clamp-1 group-hover:text-brand-orange transition-colors">
+                                    ${item.title}
+                                </h3>
+                            </div>
+
+                            <div class="flex items-center justify-between pt-1.5 border-t border-slate-800/70 mt-1">
+                                <span class="text-xs font-semibold text-slate-200">${price}</span>
+                                <span class="text-[11px] font-semibold text-brand-orange flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                                    Shop <i class="fa-solid fa-chevron-right text-[8px]"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                `;
+                grid.innerHTML += card;
+            });
+        }
+
+        // دالة الفلترة السلسة
+        function filterAlbum(selectedAlbum) {
+            const buttons = document.querySelectorAll('.album-btn');
+            const counter = document.getElementById('items-counter');
+
+            buttons.forEach(btn => {
+                if (btn.dataset.album === selectedAlbum) {
+                    btn.className = 'album-btn active whitespace-nowrap px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 bg-brand-orange text-white shadow-md';
+                } else {
+                    btn.className = 'album-btn whitespace-nowrap px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 bg-slate-800/90 text-slate-300 border border-slate-700/60 hover:border-brand-orange/50';
+                }
+            });
+
+            if (selectedAlbum === 'all') {
+                counter.innerText = 'Showing All';
+                renderProducts(allProducts);
+            } else {
+                const filtered = allProducts.filter(item => item.album === selectedAlbum);
+                counter.innerText = `${filtered.length} Items`;
+                renderProducts(filtered);
+            }
+        }
     </script>
 </body>
 </html>
