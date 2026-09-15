@@ -1,16 +1,58 @@
 [
   {
-    "title": "Urban Minimal Graphic",
+    "title": "Stethoscope Heartbeat Minimal",
+    "album": "Nurse Life & Scrub Club",
     "category": "Tee",
-    "price": "$16",
+    "price": "From $14",
+    "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=500&q=80",
+    "link": "https://www.teepublic.com"
+  },
+  {
+    "title": "Into The Wild Mountain Camper",
+    "album": "Camp, Hike & Wilderness",
+    "category": "Hoodie",
+    "price": "On Sale",
+    "image": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=500&q=80",
+    "link": "https://www.teepublic.com"
+  },
+  {
+    "title": "Heavy Deadlift Club",
+    "album": "Iron & Sweat Club",
+    "category": "Tee",
+    "price": "From $14",
     "image": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=500&q=80",
     "link": "https://www.teepublic.com"
   },
   {
-    "title": "Vintage Street Lab",
-    "category": "Hoodie",
-    "price": "$45",
+    "title": "Just One More Chapter",
+    "album": "The Book Club & Cozy Reads",
+    "category": "Tee",
+    "price": "Check Deal",
+    "image": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=500&q=80",
+    "link": "https://www.teepublic.com"
+  },
+  {
+    "title": "Espresso Yourself First",
+    "album": "Powered By Caffeine",
+    "category": "Mug",
+    "price": "From $11",
+    "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80",
+    "link": "https://www.teepublic.com"
+  },
+  {
+    "title": "Eat Sleep Code Repeat",
+    "album": "Dev Life & Coding Humor",
+    "category": "Tee",
+    "price": "From $14",
     "image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=500&q=80",
+    "link": "https://www.teepublic.com"
+  },
+  {
+    "title": "Retro Arcade Pixel Gamer",
+    "album": "Level Up & Gamer Club",
+    "category": "Tee",
+    "price": "From $14",
+    "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=500&q=80",
     "link": "https://www.teepublic.com"
   }
 ]
