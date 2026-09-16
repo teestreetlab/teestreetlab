@@ -649,161 +649,102 @@
   </div>
 
   <!-- Dynamic Logic -->
-  <script>
-    // Embedded fallback for local testing without web server
-    const localFallback = [
-      {
-        id: 1,
-        title: "Pumpkin Spice Saving Lives",
-        category_label: "NURSE LIFE & SCRUB CLUB",
-        category: "nurse",
-        badge: "Tee",
-        image: "https://images.teepublic.com/derived/production/designs/98582478_0/1789040118/i_m:bi_production_blanks_cau9y2yr6rnvk9qkrf1h_1462829013,c_0_0_470x,s_630,q_90.jpg",
-        tp_url: "https://www.teepublic.com/t-shirt/98582478-pumpkin-spice-saving-lives-cute-ghost-nurse-fall?store_id=4632483",
-        tp_image: "https://images.teepublic.com/derived/production/designs/98582478_0/1789040118/i_m:bi_production_blanks_cau9y2yr6rnvk9qkrf1h_1462829013,c_0_0_470x,s_630,q_90.jpg",
-        sp_url: "https://tee-street-lab.myspreadshop.com/",
-        sp_image: "https://image.spreadshirtmedia.com/image-server/v1/designs/1059038832,width=300,height=300"
-      },
-      {
-        id: 2,
-        title: "Sourdough Sweaters & Spooky",
-        category_label: "THE BOOK CLUB & COZY READS",
-        category: "books",
-        badge: "Hoodie",
-        image: "https://images.teepublic.com/derived/production/designs/98768977_0/1789388966/i_m:bi_production_blanks_ymwlojdlb9pdlxgcmck4_1446840652,c_7_8_451x,s_630,q_90.jpg",
-        tp_url: "https://www.teepublic.com/hoodie/98768977-sourdough-sweaters-and-spooky-season-cute-fall-aut",
-        tp_image: "https://images.teepublic.com/derived/production/designs/98768977_0/1789388966/i_m:bi_production_blanks_ymwlojdlb9pdlxgcmck4_1446840652,c_7_8_451x,s_630,q_90.jpg",
-        sp_url: "https://tee-street-lab.myspreadshop.com/",
-        sp_image: "https://image.spreadshirtmedia.com/image-server/v1/designs/1059039312,width=300,height=300"
-      },
-      {
-        id: 3,
-        title: "From Coffee Import Energy",
-        category_label: "DEV LIFE & CODING HUMOR",
-        category: "tech",
-        badge: "Tee",
-        image: "https://images.teepublic.com/derived/production/designs/98773034_1/1789395963/i_m:bi_production_blanks_cau9y2yr6rnvk9qkrf1h_1462829013,c_0_0_470x,s_630,q_90.jpg",
-        tp_url: "https://www.teepublic.com/t-shirt/98773034-from-coffee-import-energy-funny-python-programmer-?store_id=4632483",
-        tp_image: "https://images.teepublic.com/derived/production/designs/98773034_1/1789395963/i_m:bi_production_blanks_cau9y2yr6rnvk9qkrf1h_1462829013,c_0_0_470x,s_630,q_90.jpg",
-        sp_url: "",
-        sp_image: ""
-      },
-      {
-        id: 4,
-        title: "Stay Evergreen Wander...",
-        category_label: "CAMP, HIKE & WILDERNESS",
-        category: "camping",
-        badge: "Tee",
-        image: "https://images.teepublic.com/derived/production/designs/98732049_0/1789327312/i_m:bi_production_blanks_nvgy11lefnvjtfxu6kaw_1561483906,c_4_4_401x,s_630,q_90.jpg",
-        tp_url: "https://www.teepublic.com/t-shirt/98732049-stay-evergreen-wander-and-roam-mountain-pine-fores?store_id=4632483",
-        tp_image: "",
-        sp_url: "",
-        sp_image": ""
-      }
-    ];
+<script>
+  let allProducts = [];
+  let currentCategory = 'all';
 
-    let allProducts = [];
-    let currentCategory = 'all';
-
-    async function initApp() {
-      try {
-        const res = await fetch('products.json');
-        if (!res.ok) throw new Error("JSON fetch failed");
-        allProducts = await res.json();
-      } catch (e) {
-        // Fallback for offline local viewing
-        allProducts = localFallback;
-      }
+  async function initApp() {
+    try {
+      // جلب ملف products.json الحقيقي مباشرة مع كسر الكاش لضمان التحديث الفوري
+      const res = await fetch('products.json?v=' + Date.now());
+      if (!res.ok) throw new Error('HTTP error ' + res.status);
+      allProducts = await res.json();
       renderCards(allProducts);
+    } catch (err) {
+      console.error('فشل تحميل المنتجات:', err);
     }
+  }
 
-    function renderCards(items) {
-      const grid = document.getElementById('productGrid');
-      grid.innerHTML = '';
+  function renderCards(items) {
+    const grid = document.getElementById('productGrid');
+    if (!grid) return;
+    grid.innerHTML = '';
 
-      items.forEach((item) => {
-        const hasTP = item.tp_url && item.tp_url.trim() !== "";
-        const hasSP = item.sp_url && item.sp_url.trim() !== "";
-        const isDual = hasTP && hasSP;
-
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        card.onclick = () => handleCardAction(item);
-
-        card.innerHTML = `
-          <div class="card-img-box">
-            <span class="item-badge">${item.badge || 'Drop'}</span>
-            ${isDual ? `<span class="dual-store-badge">2 Stores</span>` : ''}
-            <img src="${item.image}" alt="${item.title}" loading="lazy">
-          </div>
-          <div class="card-info">
-            <div class="card-category">${item.category_label || ''}</div>
-            <div class="card-title">${item.title}</div>
-          </div>
-        `;
-        grid.appendChild(card);
-      });
-    }
-
-    function handleCardAction(item) {
+    items.forEach((item) => {
       const hasTP = item.tp_url && item.tp_url.trim() !== "";
       const hasSP = item.sp_url && item.sp_url.trim() !== "";
+      const isDual = hasTP && hasSP;
 
-      // Smart Conditional Routing:
-      if (hasTP && hasSP) {
-        // Both platforms exist -> Trigger Bottom Sheet
-        openBottomSheet(item);
-      } else if (hasTP) {
-        // TeePublic Only -> Direct Open
-        window.open(item.tp_url, '_blank');
-      } else if (hasSP) {
-        // Spreadshop Only -> Direct Open
-        window.open(item.sp_url, '_blank');
-      }
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      card.onclick = () => handleCardAction(item);
+
+      card.innerHTML = `
+        <div class="card-img-box">
+          <span class="item-badge">${item.badge || 'Drop'}</span>
+          ${isDual ? `<span class="dual-store-badge">2 Stores</span>` : ''}
+          <img src="${item.image}" alt="${item.title}" loading="lazy">
+        </div>
+        <div class="card-info">
+          <div class="card-category">${item.category_label || ''}</div>
+          <div class="card-title">${item.title}</div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  function handleCardAction(item) {
+    const hasTP = item.tp_url && item.tp_url.trim() !== "";
+    const hasSP = item.sp_url && item.sp_url.trim() !== "";
+
+    if (hasTP && hasSP) {
+      openBottomSheet(item);
+    } else if (hasTP) {
+      window.open(item.tp_url, '_blank');
+    } else if (hasSP) {
+      window.open(item.sp_url, '_blank');
     }
+  }
 
-    function openBottomSheet(item) {
-      document.getElementById('sheetMainImg').src = item.image;
-      document.getElementById('sheetProductTitle').textContent = item.title;
-      document.getElementById('sheetProductCat').textContent = item.category_label || 'TeeStreetLab Exclusive';
+  function openBottomSheet(item) {
+    document.getElementById('sheetMainImg').src = item.image;
+    document.getElementById('sheetProductTitle').textContent = item.title;
+    document.getElementById('sheetProductCat').textContent = item.category_label || 'TeeStreetLab Exclusive';
 
-      // Setup Spreadshop Option
-      const euBtn = document.getElementById('sheetEuOption');
-      euBtn.href = item.sp_url;
-      document.getElementById('sheetEuImg').src = item.sp_image || item.image;
+    const euBtn = document.getElementById('sheetEuOption');
+    euBtn.href = item.sp_url;
+    document.getElementById('sheetEuImg').src = item.sp_image || item.image;
 
-      // Setup TeePublic Option
-      const usBtn = document.getElementById('sheetUsOption');
-      usBtn.href = item.tp_url;
-      document.getElementById('sheetUsImg').src = item.tp_image || item.image;
+    const usBtn = document.getElementById('sheetUsOption');
+    usBtn.href = item.tp_url;
+    document.getElementById('sheetUsImg').src = item.tp_image || item.image;
 
-      // Display Sheet
-      document.getElementById('sheetBackdrop').classList.add('open');
-      document.getElementById('bottomSheet').classList.add('open');
-      document.body.style.overflow = 'hidden';
+    document.getElementById('sheetBackdrop').classList.add('open');
+    document.getElementById('bottomSheet').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeBottomSheet() {
+    document.getElementById('sheetBackdrop').classList.remove('open');
+    document.getElementById('bottomSheet').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function filterItems(cat, btn) {
+    currentCategory = cat;
+    document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+
+    if (cat === 'all') {
+      renderCards(allProducts);
+    } else {
+      const filtered = allProducts.filter(p => p.category === cat);
+      renderCards(filtered);
     }
+  }
 
-    function closeBottomSheet() {
-      document.getElementById('sheetBackdrop').classList.remove('open');
-      document.getElementById('bottomSheet').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    function filterItems(cat, btn) {
-      currentCategory = cat;
-      document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-
-      if (cat === 'all') {
-        renderCards(allProducts);
-      } else {
-        const filtered = allProducts.filter(p => p.category === cat);
-        renderCards(filtered);
-      }
-    }
-
-    // Start App
-    initApp();
-  </script>
+  initApp();
+</script>
 </body>
 </html>
