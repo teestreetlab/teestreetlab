@@ -1,258 +1,809 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TeeStreetLab | Official Store & Drops</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Space Grotesk', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            mint: '#7ECCA5',      /* لون حقيبة الـ Tote النعناعي */
-                            coral: '#F49B8D',     /* لون الهودي المرجاني الناعم */
-                            dark: '#0B0F19',
-                            card: '#131A29',
-                            border: '#1E293B'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* إخفاء شريط التمرير الأفقي لمظهر تطبيقي عصري وسلس */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* توهج الشعار مدمج بين لوني الهوية المرجاني والنعناعي */
-        .glow-brand-logo {
-            box-shadow: 0 0 25px -4px rgba(126, 204, 165, 0.35), 0 0 15px -2px rgba(244, 155, 141, 0.35);
-        }
-        
-        /* توهج زر الشراء الرئيسي المرجاني */
-        .glow-coral-btn {
-            box-shadow: 0 6px 20px -3px rgba(244, 155, 141, 0.4);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>TeeStreetLab | Official Store & Drops</title>
+  <meta name="description" content="Unique print-on-demand drops tailored for everyday lifestyle & passions. Worldwide shipping via TeePublic and Spreadshop.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-main: #0b0f19;
+      --card-footer: #0f172a;
+      --sheet-bg: #111827;
+      --sheet-item-bg: #1e293b;
+      --coral-accent: #ff7b72;
+      --mint-active: #6ee7b7;
+      --mint-text: #064e3b;
+      --cyan-category: #2dd4bf;
+      --pill-inactive: #1e293b;
+      --text-muted: #94a3b8;
+      --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: #ffffff;
+      font-family: var(--font);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px 50px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 440px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Brand Avatar with Glow Ring */
+    .avatar-wrapper {
+      position: relative;
+      margin-bottom: 14px;
+    }
+
+    .brand-avatar {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      background: #162032;
+      border: 2px solid transparent;
+      background-image: linear-gradient(#162032, #162032), linear-gradient(135deg, #6ee7b7, #ff7b72, #38bdf8);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 25px rgba(110, 231, 183, 0.2);
+    }
+
+    .avatar-logo-text {
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: 1px;
+      color: #ffffff;
+    }
+
+    .avatar-sub {
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+    }
+
+    /* Header Titles */
+    .brand-name {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+
+    .brand-tagline {
+      color: var(--coral-accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .brand-bio {
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.5;
+      text-align: center;
+      max-width: 360px;
+      margin-bottom: 22px;
+    }
+
+    /* Main Store CTA */
+    .main-cta-btn {
+      width: 100%;
+      background-color: var(--coral-accent);
+      color: #0f172a;
+      border-radius: 20px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 15px;
+      box-shadow: 0 8px 25px rgba(255, 123, 114, 0.3);
+      margin-bottom: 28px;
+      transition: transform 0.2s ease;
+    }
+
+    .main-cta-btn:active {
+      transform: scale(0.98);
+    }
+
+    .cta-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Filter Section */
+    .filter-section {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .filter-label {
+      font-size: 11px;
+      font-weight: 800;
+      color: #64748b;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .filter-pills {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .filter-pills::-webkit-scrollbar {
+      display: none;
+    }
+
+    .pill {
+      background: var(--pill-inactive);
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      white-space: nowrap;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .pill.active {
+      background: var(--mint-active);
+      color: var(--mint-text);
+      font-weight: 700;
+    }
+
+    /* 2-Column Product Grid */
+    .product-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .product-card {
+      background: var(--card-footer);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .product-card:active {
+      transform: scale(0.97);
+    }
+
+    .product-card:hover {
+      border-color: rgba(255, 123, 114, 0.3);
+    }
+
+    /* The White Mockup Container */
+    .card-img-box {
+      background: #ffffff;
+      aspect-ratio: 1 / 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-radius: 16px 16px 0 0;
+      overflow: hidden;
+    }
+
+    .card-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover .card-img-box img {
+      transform: scale(1.05);
+    }
+
+    .item-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: #334155;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 8px;
+      z-index: 2;
+    }
+
+    .dual-store-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(4px);
+      color: var(--mint-active);
+      border: 1px solid rgba(110, 231, 183, 0.3);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 8px;
+      z-index: 2;
+    }
+
+    /* Card Footer Info */
+    .card-info {
+      padding: 10px 12px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .card-category {
+      color: var(--cyan-category);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card-title {
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Footer Socials & Copyright */
+    footer {
+      width: 100%;
+      max-width: 440px;
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .social-bar {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-icon-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--card-footer);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .social-icon-btn:hover {
+      color: var(--coral-accent);
+      border-color: var(--coral-accent);
+      transform: translateY(-2px);
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: #64748b;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+
+    /* ====================================================
+       Bottom Sheet (iOS Native Smooth Modal)
+       ==================================================== */
+    .sheet-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .sheet-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .bottom-sheet {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      max-width: 440px;
+      margin: 0 auto;
+      background: var(--sheet-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: none;
+      border-radius: 28px 28px 0 0;
+      padding: 12px 18px 28px;
+      z-index: 1000;
+      transform: translateY(105%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 -15px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .bottom-sheet.open {
+      transform: translateY(0);
+    }
+
+    .sheet-handle {
+      width: 40px;
+      height: 4px;
+      background: #334155;
+      border-radius: 999px;
+      margin: 0 auto 14px;
+    }
+
+    .sheet-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 14px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .sheet-thumb-box {
+      width: 46px;
+      height: 46px;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .sheet-thumb-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .sheet-text-info {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .sheet-product-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sheet-product-cat {
+      font-size: 11px;
+      color: var(--cyan-category);
+      font-weight: 600;
+    }
+
+    .sheet-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sheet-option-card {
+      background: var(--sheet-item-bg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .sheet-option-card:active {
+      transform: scale(0.98);
+      border-color: var(--coral-accent);
+    }
+
+    .option-thumb-box {
+      width: 44px;
+      height: 44px;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .option-thumb-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .option-content {
+      flex: 1;
+    }
+
+    .option-title-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 2px;
+    }
+
+    .option-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .option-promo-tag {
+      background: var(--coral-accent);
+      color: #0f172a;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+
+    .option-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+
+    .option-arrow {
+      color: var(--text-muted);
+      font-size: 16px;
+      padding-right: 4px;
+    }
+
+    .sheet-close-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 12px;
+      margin-top: 8px;
+      cursor: pointer;
+    }
+  </style>
 </head>
-<body class="bg-[#0b0f19] text-slate-200 min-h-screen font-sans antialiased selection:bg-brand-mint selection:text-slate-900">
+<body>
 
-    <main class="max-w-md mx-auto px-4 py-7 flex flex-col items-center">
+  <div class="container">
+    <!-- Brand Header -->
+    <div class="avatar-wrapper">
+      <div class="brand-avatar">
+        <span class="avatar-logo-text">TSL</span>
+        <span class="avatar-sub">TEE STREET LAB</span>
+      </div>
+    </div>
 
-        <!-- Store Header & Logo -->
-        <header class="text-center flex flex-col items-center w-full mb-5">
-            <div class="relative mb-3.5">
-                <!-- إطار الشعار متدرج بين لون الهودي ولون الـ Tote -->
-                <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-brand-coral via-brand-mint to-brand-coral p-0.5 glow-brand-logo">
-                    <img src="./logo.png" 
-                         alt="TeeStreetLab Logo" 
-                         class="w-full h-full rounded-full object-cover bg-slate-900 border-2 border-slate-900"
-                         onerror="this.src='https://via.placeholder.com/320?text=TSL'">
-                </div>
-                <!-- شارة المتجر نشط (Mint) -->
-                <span class="absolute bottom-1 right-1 bg-brand-mint w-4 h-4 rounded-full border-2 border-[#0b0f19]" title="Store Open"></span>
-            </div>
+    <h1 class="brand-name">TeeStreetLab</h1>
+    <div class="brand-tagline">STREETWEAR & GRAPHIC APPAREL</div>
+    <p class="brand-bio">
+      Unique print-on-demand drops tailored for everyday lifestyle & passions. Worldwide shipping via TeePublic.
+    </p>
 
-            <h1 class="font-display font-bold text-2xl tracking-tight text-white mb-0.5">TeeStreetLab</h1>
-            <p class="text-[11px] font-semibold uppercase tracking-widest text-brand-coral mb-2">Streetwear & Graphic Apparel</p>
-            <p class="text-xs text-slate-400 max-w-xs leading-relaxed">
-                Unique print-on-demand drops tailored for everyday lifestyle & passions. Worldwide shipping via TeePublic.
-            </p>
-        </header>
+    <!-- Main TeePublic Button -->
+    <a href="https://www.teepublic.com/user/tee-street-lab" target="_blank" class="main-cta-btn" rel="noopener">
+      <div class="cta-left">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z"/>
+        </svg>
+        <span>Explore Full Store on TeePublic</span>
+      </div>
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"/>
+      </svg>
+    </a>
 
-        <!-- Primary CTA: Main Store Link (Coral Punch Button) -->
-        <section class="w-full mb-6">
-            <a href="https://www.teepublic.com/user/tee-street-lab" target="_blank" rel="noopener noreferrer"
-               class="flex items-center justify-center gap-2.5 w-full bg-gradient-to-r from-brand-coral via-[#f28e7e] to-brand-coral hover:brightness-105 text-slate-950 font-bold py-3.5 px-6 rounded-2xl glow-coral-btn transition-all duration-300 transform active:scale-95">
-                <i class="fa-solid fa-bag-shopping text-base text-slate-950"></i>
-                <span>Explore Full Store on TeePublic</span>
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-75 ml-1 text-slate-950"></i>
-            </a>
-        </section>
+    <!-- Filter by Album -->
+    <div class="filter-section">
+      <div class="filter-label">FILTER BY ALBUM</div>
+      <div class="filter-pills">
+        <button class="pill active" onclick="filterItems('all', this)">All</button>
+        <button class="pill" onclick="filterItems('nurse', this)">Nurse</button>
+        <button class="pill" onclick="filterItems('camping', this)">Camping</button>
+        <button class="pill" onclick="filterItems('gym', this)">Gym</button>
+        <button class="pill" onclick="filterItems('books', this)">Books</button>
+        <button class="pill" onclick="filterItems('tech', this)">Dev Life</button>
+      </div>
+    </div>
 
-        <!-- Albums Horizontal Filter (Clean Header Without Badges) -->
-        <section class="w-full mb-4">
-            <div class="mb-2 px-1">
-                <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Filter By Album</span>
-            </div>
-            
-            <!-- أزرار الألبومات الأفقية بتدرج الأخضر النعناعي -->
-            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 px-0.5 -mx-1 text-xs">
-                <button onclick="filterAlbum('all')" data-album="all" class="album-btn active whitespace-nowrap px-3.5 py-1.5 rounded-full font-semibold transition-all duration-200 bg-brand-mint text-slate-950 shadow-md">
-                    All
-                </button>
-                <button onclick="filterAlbum('Nurse Life & Scrub Club')" data-album="Nurse Life & Scrub Club" class="album-btn whitespace-nowrap px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 bg-slate-800/90 text-slate-300 border border-slate-700/60 hover:border-brand-mint/50">
-                    Nurse
-                </button>
-                <button onclick="filterAlbum('Camp, Hike & Wilderness')" data-album="Camp, Hike & Wilderness" class="album-btn whitespace-nowrap px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 bg-slate-800/90 text-slate-300 border border-slate-700/60 hover:border-brand-mint/50">
-                    Camping
-                </button>
-                <button onclick="filterAlbum('Iron & Sweat Club')" data-album="Iron & Sweat Club" class="album-btn whitespace-nowrap px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 bg-slate-800/90 text-slate-300 border border-slate-700/60 hover:border-brand-mint/50">
-                    Gym
-                </button>
-                <button onclick="filterAlbum('The Book Club & Cozy Reads')" data-album="The Book Club & Cozy Reads" class="album-btn whitespace-nowrap px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 bg-slate-800/90 text-slate-300 border border-slate-700/60 hover:border-brand-mint/50">
-                    Books
-                </button>
-                <button onclick="filterAlbum('Powered By Caffeine')" data-album="Powered By Caffeine" class="album-btn whitespace-nowrap px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 bg-slate-800/90 text-slate-300 border border-slate-700/60 hover:border-brand-mint/50">
-                    Coffee
-                </button>
-                <button onclick="filterAlbum('Dev Life & Coding Humor')" data-album="Dev Life & Coding Humor" class="album-btn whitespace-nowrap px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 bg-slate-800/90 text-slate-300 border border-slate-700/60 hover:border-brand-mint/50">
-                    Coding
-                </button>
-                <button onclick="filterAlbum('Level Up & Gamer Club')" data-album="Level Up & Gamer Club" class="album-btn whitespace-nowrap px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 bg-slate-800/90 text-slate-300 border border-slate-700/60 hover:border-brand-mint/50">
-                    Gaming
-                </button>
-            </div>
-        </section>
+    <!-- 2-Column Product Grid -->
+    <div class="product-grid" id="productGrid">
+      <!-- Injected Dynamically -->
+    </div>
 
-        <!-- Product Grid Container -->
-        <section class="w-full mb-8">
-            <div id="products-grid" class="grid grid-cols-2 gap-3">
-                <div id="loading-state" class="col-span-2 text-center py-12">
-                    <i class="fa-solid fa-circle-notch fa-spin text-brand-mint text-2xl mb-2"></i>
-                    <p class="text-xs text-slate-400">Loading catalog...</p>
-                </div>
-            </div>
-        </section>
+    <!-- Footer -->
+    <footer>
+      <div class="social-bar">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/teestreetlab" target="_blank" class="social-icon-btn" title="Instagram" rel="noopener">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <!-- TikTok -->
+        <a href="https://tiktok.com/@teestreetlab" target="_blank" class="social-icon-btn" title="TikTok" rel="noopener">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+        <!-- Pinterest -->
+        <a href="https://pin.it/4RJM9HXpu" target="_blank" class="social-icon-btn" title="Pinterest" rel="noopener">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.291 1.199-.332 1.365-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+        </a>
+      </div>
+      <div class="footer-copy">&copy; 2026 TeeStreetLab. All rights reserved.</div>
+    </footer>
+  </div>
 
-        <!-- Social Channels -->
-        <section class="w-full flex flex-col items-center gap-3 pt-4 pb-6 border-t border-slate-800/80">
-            <span class="text-[11px] uppercase tracking-wider text-slate-400 font-medium">Follow The Lab</span>
-            <div class="flex items-center gap-4">
-                <!-- Pinterest -->
-                <a href="https://pin.it/4RJM9HXpu" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"
-                   class="w-11 h-11 rounded-full bg-slate-800/90 border border-slate-700/80 flex items-center justify-center text-slate-300 hover:text-red-500 hover:border-red-500/50 transition-all transform hover:-translate-y-1">
-                    <i class="fa-brands fa-pinterest-p text-lg"></i>
-                </a>
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/teestreetlab?stkn=eXdkZ2lqMzJiMXR2" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
-                   class="w-11 h-11 rounded-full bg-slate-800/90 border border-slate-700/80 flex items-center justify-center text-slate-300 hover:text-pink-500 hover:border-pink-500/50 transition-all transform hover:-translate-y-1">
-                    <i class="fa-brands fa-instagram text-lg"></i>
-                </a>
-                <!-- TikTok -->
-                <a href="http://tiktok.com/@teestreetlab" target="_blank" rel="noopener noreferrer" aria-label="TikTok"
-                   class="w-11 h-11 rounded-full bg-slate-800/90 border border-slate-700/80 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition-all transform hover:-translate-y-1">
-                    <i class="fa-brands fa-tiktok text-lg"></i>
-                </a>
-            </div>
-        </section>
+  <!-- Bottom Sheet Backdrop & Container -->
+  <div class="sheet-backdrop" id="sheetBackdrop" onclick="closeBottomSheet()"></div>
+  <div class="bottom-sheet" id="bottomSheet">
+    <div class="sheet-handle"></div>
 
-        <!-- Minimal Footer -->
-        <footer class="text-center text-xs text-slate-400 pb-2">
-            <p>© 2026 TeeStreetLab. Powered by TeePublic.</p>
-        </footer>
+    <div class="sheet-header">
+      <div class="sheet-thumb-box">
+        <img id="sheetMainImg" src="" alt="Product Thumbnail">
+      </div>
+      <div class="sheet-text-info">
+        <div class="sheet-product-title" id="sheetProductTitle">Product Title</div>
+        <div class="sheet-product-cat" id="sheetProductCat">Category</div>
+      </div>
+    </div>
 
-    </main>
+    <div class="sheet-options">
+      <!-- Europe & UK Option (Spreadshop) -->
+      <a id="sheetEuOption" href="#" target="_blank" rel="noopener" class="sheet-option-card">
+        <div class="option-thumb-box">
+          <img id="sheetEuImg" src="" alt="Spreadshop Mockup">
+        </div>
+        <div class="option-content">
+          <div class="option-title-row">
+            <span class="option-name">🇪🇺 UK & Europe Express</span>
+            <span class="option-promo-tag">25% OFF</span>
+          </div>
+          <div class="option-desc">Fast local production & auto-discount at checkout.</div>
+        </div>
+        <div class="option-arrow">➔</div>
+      </a>
 
-    <!-- App Engine Script -->
-    <script>
-        let allProducts = [];
+      <!-- US & Worldwide Option (TeePublic) -->
+      <a id="sheetUsOption" href="#" target="_blank" rel="noopener" class="sheet-option-card">
+        <div class="option-thumb-box">
+          <img id="sheetUsImg" src="" alt="TeePublic Mockup">
+        </div>
+        <div class="option-content">
+          <div class="option-title-row">
+            <span class="option-name">🇺🇸 US & Worldwide</span>
+          </div>
+          <div class="option-desc">Standard international delivery via TeePublic.</div>
+        </div>
+        <div class="option-arrow">➔</div>
+      </a>
+    </div>
 
-        document.addEventListener('DOMContentLoaded', () => {
-            fetch('./products.json?v=' + new Date().getTime())
-                .then(res => {
-                    if (!res.ok) throw new Error('Could not load products.json');
-                    return res.json();
-                })
-                .then(data => {
-                    allProducts = data;
-                    renderProducts(allProducts);
-                })
-                .catch(err => {
-                    document.getElementById('products-grid').innerHTML = 
-                        '<p class="col-span-2 text-center text-xs text-red-400 py-6">Could not load designs. Ensure products.json exists.</p>';
-                });
-        });
+    <button class="sheet-close-btn" onclick="closeBottomSheet()">Cancel</button>
+  </div>
 
-        function renderProducts(products) {
-            const grid = document.getElementById('products-grid');
-            grid.innerHTML = '';
+  <!-- Dynamic Logic -->
+  <script>
+    // Embedded fallback for local testing without web server
+    const localFallback = [
+      {
+        id: 1,
+        title: "Pumpkin Spice Saving Lives",
+        category_label: "NURSE LIFE & SCRUB CLUB",
+        category: "nurse",
+        badge: "Tee",
+        image: "https://images.teepublic.com/derived/production/designs/98582478_0/1789040118/i_m:bi_production_blanks_cau9y2yr6rnvk9qkrf1h_1462829013,c_0_0_470x,s_630,q_90.jpg",
+        tp_url: "https://www.teepublic.com/t-shirt/98582478-pumpkin-spice-saving-lives-cute-ghost-nurse-fall?store_id=4632483",
+        tp_image: "https://images.teepublic.com/derived/production/designs/98582478_0/1789040118/i_m:bi_production_blanks_cau9y2yr6rnvk9qkrf1h_1462829013,c_0_0_470x,s_630,q_90.jpg",
+        sp_url: "https://tee-street-lab.myspreadshop.com/",
+        sp_image: "https://image.spreadshirtmedia.com/image-server/v1/designs/1059038832,width=300,height=300"
+      },
+      {
+        id: 2,
+        title: "Sourdough Sweaters & Spooky",
+        category_label: "THE BOOK CLUB & COZY READS",
+        category: "books",
+        badge: "Hoodie",
+        image: "https://images.teepublic.com/derived/production/designs/98768977_0/1789388966/i_m:bi_production_blanks_ymwlojdlb9pdlxgcmck4_1446840652,c_7_8_451x,s_630,q_90.jpg",
+        tp_url: "https://www.teepublic.com/hoodie/98768977-sourdough-sweaters-and-spooky-season-cute-fall-aut",
+        tp_image: "https://images.teepublic.com/derived/production/designs/98768977_0/1789388966/i_m:bi_production_blanks_ymwlojdlb9pdlxgcmck4_1446840652,c_7_8_451x,s_630,q_90.jpg",
+        sp_url: "https://tee-street-lab.myspreadshop.com/",
+        sp_image: "https://image.spreadshirtmedia.com/image-server/v1/designs/1059039312,width=300,height=300"
+      },
+      {
+        id: 3,
+        title: "From Coffee Import Energy",
+        category_label: "DEV LIFE & CODING HUMOR",
+        category: "tech",
+        badge: "Tee",
+        image: "https://images.teepublic.com/derived/production/designs/98773034_1/1789395963/i_m:bi_production_blanks_cau9y2yr6rnvk9qkrf1h_1462829013,c_0_0_470x,s_630,q_90.jpg",
+        tp_url: "https://www.teepublic.com/t-shirt/98773034-from-coffee-import-energy-funny-python-programmer-?store_id=4632483",
+        tp_image: "https://images.teepublic.com/derived/production/designs/98773034_1/1789395963/i_m:bi_production_blanks_cau9y2yr6rnvk9qkrf1h_1462829013,c_0_0_470x,s_630,q_90.jpg",
+        sp_url: "",
+        sp_image: ""
+      },
+      {
+        id: 4,
+        title: "Stay Evergreen Wander...",
+        category_label: "CAMP, HIKE & WILDERNESS",
+        category: "camping",
+        badge: "Tee",
+        image: "https://images.teepublic.com/derived/production/designs/98732049_0/1789327312/i_m:bi_production_blanks_nvgy11lefnvjtfxu6kaw_1561483906,c_4_4_401x,s_630,q_90.jpg",
+        tp_url: "https://www.teepublic.com/t-shirt/98732049-stay-evergreen-wander-and-roam-mountain-pine-fores?store_id=4632483",
+        tp_image: "",
+        sp_url: "",
+        sp_image": ""
+      }
+    ];
 
-            if (!products || products.length === 0) {
-                grid.innerHTML = '<p class="col-span-2 text-center text-xs text-slate-400 py-8">No designs found in this album.</p>';
-                return;
-            }
+    let allProducts = [];
+    let currentCategory = 'all';
 
-            products.forEach(item => {
-                const price = item.price || 'View Deal';
-                const category = item.category || 'Tee';
-                const albumName = item.album || 'Featured Drop';
+    async function initApp() {
+      try {
+        const res = await fetch('products.json');
+        if (!res.ok) throw new Error("JSON fetch failed");
+        allProducts = await res.json();
+      } catch (e) {
+        // Fallback for offline local viewing
+        allProducts = localFallback;
+      }
+      renderCards(allProducts);
+    }
 
-                const card = `
-                    <a href="${item.link}" target="_blank" rel="noopener noreferrer" 
-                       class="group bg-[#131a29] border border-slate-800/90 rounded-2xl overflow-hidden hover:border-brand-mint/60 transition-all duration-300 flex flex-col shadow-sm">
-                        
-                        <!-- Product Image & Category Badge -->
-                        <div class="aspect-square bg-slate-900/60 relative overflow-hidden flex items-center justify-center">
-                            <img src="${item.image}" 
-                                 alt="${item.title}" 
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                 loading="lazy"
-                                 onerror="this.src='https://via.placeholder.com/400x400?text=Design'">
-                            
-                            <span class="absolute top-2 right-2 bg-black/70 backdrop-blur-md text-slate-200 text-[9px] font-bold px-2 py-0.5 rounded-md border border-white/10">
-                                ${category}
-                            </span>
-                        </div>
+    function renderCards(items) {
+      const grid = document.getElementById('productGrid');
+      grid.innerHTML = '';
 
-                        <!-- Card Content (Mint Album + Coral CTA) -->
-                        <div class="p-3 flex flex-col flex-grow justify-between gap-1.5">
-                            <div>
-                                <!-- اسم الألبوم بلون الـ Tote النعناعي -->
-                                <span class="text-[9px] font-semibold text-brand-mint uppercase tracking-wider block truncate mb-0.5">
-                                    ${albumName}
-                                </span>
-                                <h3 class="font-medium text-xs text-white line-clamp-1 group-hover:text-brand-mint transition-colors">
-                                    ${item.title}
-                                </h3>
-                            </div>
+      items.forEach((item) => {
+        const hasTP = item.tp_url && item.tp_url.trim() !== "";
+        const hasSP = item.sp_url && item.sp_url.trim() !== "";
+        const isDual = hasTP && hasSP;
 
-                            <div class="flex items-center justify-between pt-1.5 border-t border-slate-800/70 mt-1">
-                                <!-- السعر وسهم الشراء بلون الهودي المرجاني الجذاب -->
-                                <span class="text-xs font-semibold text-brand-coral">${price}</span>
-                                <span class="text-[11px] font-semibold text-brand-coral flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
-                                    Shop <i class="fa-solid fa-chevron-right text-[8px]"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                `;
-                grid.innerHTML += card;
-            });
-        }
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.onclick = () => handleCardAction(item);
 
-        // دالة الفلترة السلسة
-        function filterAlbum(selectedAlbum) {
-            const buttons = document.querySelectorAll('.album-btn');
+        card.innerHTML = `
+          <div class="card-img-box">
+            <span class="item-badge">${item.badge || 'Drop'}</span>
+            ${isDual ? `<span class="dual-store-badge">2 Stores</span>` : ''}
+            <img src="${item.image}" alt="${item.title}" loading="lazy">
+          </div>
+          <div class="card-info">
+            <div class="card-category">${item.category_label || ''}</div>
+            <div class="card-title">${item.title}</div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
 
-            buttons.forEach(btn => {
-                if (btn.dataset.album === selectedAlbum) {
-                    btn.className = 'album-btn active whitespace-nowrap px-3.5 py-1.5 rounded-full font-semibold transition-all duration-200 bg-brand-mint text-slate-950 shadow-md';
-                } else {
-                    btn.className = 'album-btn whitespace-nowrap px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 bg-slate-800/90 text-slate-300 border border-slate-700/60 hover:border-brand-mint/50';
-                }
-            });
+    function handleCardAction(item) {
+      const hasTP = item.tp_url && item.tp_url.trim() !== "";
+      const hasSP = item.sp_url && item.sp_url.trim() !== "";
 
-            if (selectedAlbum === 'all') {
-                renderProducts(allProducts);
-            } else {
-                const filtered = allProducts.filter(item => item.album === selectedAlbum);
-                renderProducts(filtered);
-            }
-        }
-    </script>
+      // Smart Conditional Routing:
+      if (hasTP && hasSP) {
+        // Both platforms exist -> Trigger Bottom Sheet
+        openBottomSheet(item);
+      } else if (hasTP) {
+        // TeePublic Only -> Direct Open
+        window.open(item.tp_url, '_blank');
+      } else if (hasSP) {
+        // Spreadshop Only -> Direct Open
+        window.open(item.sp_url, '_blank');
+      }
+    }
+
+    function openBottomSheet(item) {
+      document.getElementById('sheetMainImg').src = item.image;
+      document.getElementById('sheetProductTitle').textContent = item.title;
+      document.getElementById('sheetProductCat').textContent = item.category_label || 'TeeStreetLab Exclusive';
+
+      // Setup Spreadshop Option
+      const euBtn = document.getElementById('sheetEuOption');
+      euBtn.href = item.sp_url;
+      document.getElementById('sheetEuImg').src = item.sp_image || item.image;
+
+      // Setup TeePublic Option
+      const usBtn = document.getElementById('sheetUsOption');
+      usBtn.href = item.tp_url;
+      document.getElementById('sheetUsImg').src = item.tp_image || item.image;
+
+      // Display Sheet
+      document.getElementById('sheetBackdrop').classList.add('open');
+      document.getElementById('bottomSheet').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBottomSheet() {
+      document.getElementById('sheetBackdrop').classList.remove('open');
+      document.getElementById('bottomSheet').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function filterItems(cat, btn) {
+      currentCategory = cat;
+      document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+
+      if (cat === 'all') {
+        renderCards(allProducts);
+      } else {
+        const filtered = allProducts.filter(p => p.category === cat);
+        renderCards(filtered);
+      }
+    }
+
+    // Start App
+    initApp();
+  </script>
 </body>
 </html>
