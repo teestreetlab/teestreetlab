@@ -1,74 +1,74 @@
 [
   {
-    "title": "From Coffee Import Energy",
-    "album": "Dev Life & Coding Humor",
-    "category": "Tee",
-    "price": "From $16",
-    "image": "https://images.teepublic.com/derived/production/designs/98773034_1/1789395963/i_m:bi_production_blanks_cau9y2yr6rnvk9qkrf1h_1462829013,c_0_0_470x,s_630,q_90.jpg",
-    "link": "https://www.teepublic.com/t-shirt/98773034-from-coffee-import-energy-funny-python-programmer-?store_id=4632483"
-  },
-  {
-    "title": "Sourdough Sweaters And Spooky Season",
-    "album": "The Book Club & Cozy Reads",
-    "category": "Hoodie",
-    "price": "On Sale",
-    "image": "https://images.teepublic.com/derived/production/designs/98768977_0/1789388966/i_m:bi_production_blanks_ymwlojdlb9pdlxgcmck4_1446840652,c_7_8_451x,s_630,q_90.jpg",
-    "link": "https://www.teepublic.com/hoodie/98768977-sourdough-sweaters-and-spooky-season-cute-fall-aut"
-  },
-  {
-    "title": "Cozy Season Just Me & My Books",
-    "album": "The Book Club & Cozy Reads",
-    "category": "long-sleeve-Tee",
-    "price": "From $17",
-    "image": "https://images.teepublic.com/derived/production/designs/98652922_0/1789174168/i_m:bi_production_blanks_wahaid4l0xhexez2gwtn_1446840601,c_0_0_441x,s_630,q_90.jpg",
-    "link": "https://www.teepublic.com/long-sleeve-t-shirt/98652922-cozy-season-just-me-and-my-books-retro-cottagecore"
-  },
-  {
+    "id": 1,
     "title": "Pumpkin Spice Saving Lives",
-    "album": "Nurse Life & Scrub Club",
-    "category": "Tee",
-    "price": "From $16",
+    "category_label": "NURSE LIFE & SCRUB CLUB",
+    "category": "nurse",
+    "badge": "Tee",
     "image": "https://images.teepublic.com/derived/production/designs/98582478_0/1789040118/i_m:bi_production_blanks_cau9y2yr6rnvk9qkrf1h_1462829013,c_0_0_470x,s_630,q_90.jpg",
-    "link": "https://www.teepublic.com/t-shirt/98582478-pumpkin-spice-saving-lives-cute-ghost-nurse-fall?store_id=4632483"
+    "tp_url": "https://www.teepublic.com/t-shirt/98582478-pumpkin-spice-saving-lives-cute-ghost-nurse-fall?store_id=4632483",
+    "tp_image": "https://images.teepublic.com/derived/production/designs/98582478_0/1789040118/i_m:bi_production_blanks_cau9y2yr6rnvk9qkrf1h_1462829013,c_0_0_470x,s_630,q_90.jpg",
+    "sp_url": "https://tee-street-lab.myspreadshop.com/",
+    "sp_image": "https://image.spreadshirtmedia.com/image-server/v1/designs/1059038832,width=300,height=300"
   },
   {
-    "title": "Stay Evergreen Wander And Roam ",
-    "album": "Camp, Hike & Wilderness",
-    "category": "Tee",
-    "price": "From $16",
+    "id": 2,
+    "title": "Sourdough Sweaters & Spooky",
+    "category_label": "THE BOOK CLUB & COZY READS",
+    "category": "books",
+    "badge": "Hoodie",
+    "image": "https://images.teepublic.com/derived/production/designs/98768977_0/1789388966/i_m:bi_production_blanks_ymwlojdlb9pdlxgcmck4_1446840652,c_7_8_451x,s_630,q_90.jpg",
+    "tp_url": "https://www.teepublic.com/hoodie/98768977-sourdough-sweaters-and-spooky-season-cute-fall-aut",
+    "tp_image": "https://images.teepublic.com/derived/production/designs/98768977_0/1789388966/i_m:bi_production_blanks_ymwlojdlb9pdlxgcmck4_1446840652,c_7_8_451x,s_630,q_90.jpg",
+    "sp_url": "https://tee-street-lab.myspreadshop.com/",
+    "sp_image": "https://image.spreadshirtmedia.com/image-server/v1/designs/1059039312,width=300,height=300"
+  },
+  {
+    "id": 3,
+    "title": "From Coffee Import Energy",
+    "category_label": "DEV LIFE & CODING HUMOR",
+    "category": "tech",
+    "badge": "Tee",
+    "image": "https://images.teepublic.com/derived/production/designs/98773034_1/1789395963/i_m:bi_production_blanks_cau9y2yr6rnvk9qkrf1h_1462829013,c_0_0_470x,s_630,q_90.jpg",
+    "tp_url": "https://www.teepublic.com/t-shirt/98773034-from-coffee-import-energy-funny-python-programmer-?store_id=4632483",
+    "tp_image": "https://images.teepublic.com/derived/production/designs/98773034_1/1789395963/i_m:bi_production_blanks_cau9y2yr6rnvk9qkrf1h_1462829013,c_0_0_470x,s_630,q_90.jpg",
+    "sp_url": "",
+    "sp_image": ""
+  },
+  {
+    "id": 4,
+    "title": "Boo-tiful Care On Night Shift",
+    "category_label": "NURSE LIFE & SCRUB CLUB",
+    "category": "nurse",
+    "badge": "Sweatshirt",
+    "image": "https://image.spreadshirtmedia.com/image-server/v1/designs/1059039291,width=300,height=300",
+    "tp_url": "",
+    "tp_image": "",
+    "sp_url": "https://tee-street-lab.myspreadshop.com/",
+    "sp_image": "https://image.spreadshirtmedia.com/image-server/v1/designs/1059039291,width=300,height=300"
+  },
+  {
+    "id": 5,
+    "title": "Stay Evergreen Wander & Roam",
+    "category_label": "CAMP, HIKE & WILDERNESS",
+    "category": "camping",
+    "badge": "Tee",
     "image": "https://images.teepublic.com/derived/production/designs/98732049_0/1789327312/i_m:bi_production_blanks_nvgy11lefnvjtfxu6kaw_1561483906,c_4_4_401x,s_630,q_90.jpg",
-    "link": "https://www.teepublic.com/t-shirt/98732049-stay-evergreen-wander-and-roam-mountain-pine-fores?store_id=4632483"
+    "tp_url": "https://www.teepublic.com/t-shirt/98732049-stay-evergreen-wander-and-roam-mountain-pine-fores?store_id=4632483",
+    "tp_image": "",
+    "sp_url": "",
+    "sp_image": ""
   },
   {
-    "title": "Lost In The Fall Chapter",
-    "album": "The Book Club & Cozy Reads",
-    "category": "Tee",
-    "price": "From $16",
-    "image": "https://images.teepublic.com/derived/production/designs/98651456_1/1789291365/i_m:bi_production_blanks_jtgnlgrx6koubn7szpd5_1632497779,c_0_0_500x,s_630,q_90.jpg",
-    "link": "https://www.teepublic.com/t-shirt/98651456-lost-in-the-fall-chapter-cozy-bookish-fall-reading"
-  },
-  {
-    "title": "Stay Rooted Let Them Fall",
-    "album": "Camp, Hike & Wilderness",
-    "category": "Tee",
-    "price": "From $16",
-    "image": "https://images.teepublic.com/derived/production/designs/98687765_0/1789233283/i_m:bi_production_blanks_h778z1f0n6g0xugjpxxm_1462829020,c_12_0_447x,s_630,q_90.jpg",
-    "link": "https://www.teepublic.com/t-shirt/98687765-stay-rooted-let-them-fall-autumn-tree-of-life?store_id=4632483"
-  },
-  {
+    "id": 6,
     "title": "Hustle For That Muscle",
-    "album": "Iron & Sweat Club",
-    "category": "Tee",
-    "price": "From $16",
+    "category_label": "IRON & SWEAT CLUB",
+    "category": "gym",
+    "badge": "Tee",
     "image": "https://images.teepublic.com/derived/production/designs/98552185_0/1788994151/i_m:bi_production_blanks_nbp4yvvdhtkpx1fimrpg_1695751919,c_18_0_360x,s_630,q_90.jpg",
-    "link": "https://www.teepublic.com/t-shirt/98552185-hustle-for-that-muscle-gym-workout?store_id=4632483"
-  },
-  {
-    "title": "Teach Love Inspire",
-    "album": "The Book Club & Cozy Reads",
-    "category": "Tee",
-    "price": "From $16",
-    "image": "https://images.teepublic.com/derived/production/designs/98724079_0/1789312943/i_m:bi_production_blanks_ispvgbiv6gb2dyytnblq_1535405122,c_0_0_472x,bps_ba,s_630,q_90.jpg",
-    "link": "https://www.teepublic.com/t-shirt/98724079-teach-love-inspire-retro-daisy-teacher-groovy-back?store_id=4632483"
+    "tp_url": "https://www.teepublic.com/t-shirt/98552185-hustle-for-that-muscle-gym-workout?store_id=4632483",
+    "tp_image": "",
+    "sp_url": "",
+    "sp_image": ""
   }
 ]
