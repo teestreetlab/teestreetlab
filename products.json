@@ -22,53 +22,5 @@
     "tp_image": "SourdoughTeepublic.jpg",
     "sp_url": "https://tee-street-lab.myspreadshop.com/sourdough+sweaters+and+spooky+season-A323d69d49e5aad09?sellable=ri5lrah2phxl-512&appearance=4",
     "sp_image": "SourdoughUS.jpg"
-  },
-  {
-    "id": 3,
-    "title": "From Coffee Import Energy",
-    "category_label": "DEV LIFE & CODING HUMOR",
-    "category": "tech",
-    "badge": "Tee",
-    "image": "https://images.teepublic.com/derived/production/designs/98773034_1/1789395963/i_m:bi_production_blanks_cau9y2yr6rnvk9qkrf1h_1462829013,c_0_0_470x,s_630,q_90.jpg",
-    "tp_url": "https://www.teepublic.com/t-shirt/98773034-from-coffee-import-energy-funny-python-programmer-?store_id=4632483",
-    "tp_image": "https://images.teepublic.com/derived/production/designs/98773034_1/1789395963/i_m:bi_production_blanks_cau9y2yr6rnvk9qkrf1h_1462829013,c_0_0_470x,s_630,q_90.jpg",
-    "sp_url": "",
-    "sp_image": ""
-  },
-  {
-    "id": 4,
-    "title": "Boo-tiful Care On Night Shift",
-    "category_label": "NURSE LIFE & SCRUB CLUB",
-    "category": "nurse",
-    "badge": "Sweatshirt",
-    "image": "https://image.spreadshirtmedia.com/image-server/v1/designs/1059039291,width=300,height=300",
-    "tp_url": "",
-    "tp_image": "",
-    "sp_url": "https://tee-street-lab.myspreadshop.com/",
-    "sp_image": "https://image.spreadshirtmedia.com/image-server/v1/designs/1059039291,width=300,height=300"
-  },
-  {
-    "id": 5,
-    "title": "Stay Evergreen Wander & Roam",
-    "category_label": "CAMP, HIKE & WILDERNESS",
-    "category": "camping",
-    "badge": "Tee",
-    "image": "https://images.teepublic.com/derived/production/designs/98732049_0/1789327312/i_m:bi_production_blanks_nvgy11lefnvjtfxu6kaw_1561483906,c_4_4_401x,s_630,q_90.jpg",
-    "tp_url": "https://www.teepublic.com/t-shirt/98732049-stay-evergreen-wander-and-roam-mountain-pine-fores?store_id=4632483",
-    "tp_image": "",
-    "sp_url": "",
-    "sp_image": ""
-  },
-  {
-    "id": 6,
-    "title": "Hustle For That Muscle",
-    "category_label": "IRON & SWEAT CLUB",
-    "category": "gym",
-    "badge": "Tee",
-    "image": "https://images.teepublic.com/derived/production/designs/98552185_0/1788994151/i_m:bi_production_blanks_nbp4yvvdhtkpx1fimrpg_1695751919,c_18_0_360x,s_630,q_90.jpg",
-    "tp_url": "https://www.teepublic.com/t-shirt/98552185-hustle-for-that-muscle-gym-workout?store_id=4632483",
-    "tp_image": "",
-    "sp_url": "",
-    "sp_image": ""
   }
 ]
