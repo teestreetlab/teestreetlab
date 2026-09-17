@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>TeeStreetLab | Official Store & Drops</title>
-  <meta name="description" content="Unique print-on-demand drops tailored for everyday lifestyle & passions. Worldwide shipping via TeePublic and Spreadshop.">
+  <meta name="description" content="Unique print-on-demand drops tailored for everyday lifestyle & passions. Worldwide shipping via TeePublic & Spreadshop.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -50,34 +50,61 @@
       align-items: center;
     }
 
-    /* Brand Avatar with Glow Ring */
+    /* Brand Avatar with Glow Ring & Online Dot */
     .avatar-wrapper {
       position: relative;
       margin-bottom: 14px;
     }
 
-    ..brand-avatar {
-  width: 92px;
-  height: 92px;
-  border-radius: 50%;
-  background: #162032;
-  border: 2px solid transparent;
-  background-image: linear-gradient(#162032, #162032), linear-gradient(135deg, #6ee7b7, #ff7b72, #38bdf8);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 25px rgba(110, 231, 183, 0.2);
-  overflow: hidden; /* لقص زوايا الصورة وتطابقها مع الدائرة */
-}
+    .brand-avatar {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      background: #162032;
+      border: 2px solid transparent;
+      background-image: linear-gradient(#162032, #162032), linear-gradient(135deg, #6ee7b7, #ff7b72, #38bdf8);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 25px rgba(110, 231, 183, 0.25);
+      overflow: hidden;
+    }
 
-.avatar-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* لملء الدائرة بالكامل دون مط أو بكسلة */
-  border-radius: 50%;
-}
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* Green Live Pulse Status Indicator */
+    .online-badge {
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      width: 16px;
+      height: 16px;
+      background-color: #10b981;
+      border: 2.5px solid var(--bg-main);
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+    }
+
+    .online-badge::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      border: 2px solid #10b981;
+      animation: pulse-ring 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% { transform: scale(0.6); opacity: 1; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
 
     /* Header Titles */
     .brand-name {
@@ -377,12 +404,12 @@
     }
 
     /* ====================================================
-       Bottom Sheet (Native Hardware-Accelerated 60fps)
+       Bottom Sheet (High-Conversion Artwork Showcase)
        ==================================================== */
     .sheet-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(5, 8, 15, 0.82);
+      background: rgba(5, 8, 15, 0.85);
       z-index: 999;
       opacity: 0;
       pointer-events: none;
@@ -410,7 +437,7 @@
       z-index: 1000;
       transform: translate3d(0, 105%, 0);
       transition: transform 0.28s cubic-bezier(0.32, 1, 0.23, 1);
-      box-shadow: 0 -15px 40px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 -15px 40px rgba(0, 0, 0, 0.75);
       will-change: transform;
     }
 
@@ -426,53 +453,67 @@
       margin: 0 auto 14px;
     }
 
-    .sheet-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding-bottom: 14px;
+    /* Pure Artwork Showcase Canvas */
+    .sheet-art-showcase {
       margin-bottom: 16px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .sheet-thumb-box {
-      width: 46px;
-      height: 46px;
+    .sheet-art-canvas {
+      position: relative;
       background: #ffffff;
-      border-radius: 12px;
-      padding: 4px;
+      border-radius: 18px;
+      height: 180px;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
+      padding: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
     }
 
-    .sheet-thumb-box img {
+    .sheet-art-canvas img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
     }
 
-    .sheet-text-info {
-      flex: 1;
-      overflow: hidden;
+    .art-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: rgba(15, 23, 42, 0.88);
+      color: var(--mint-active);
+      border: 1px solid rgba(110, 231, 183, 0.3);
+      font-size: 9px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .sheet-info-row {
+      padding: 0 4px;
     }
 
     .sheet-product-title {
-      font-size: 14px;
-      font-weight: 700;
+      font-size: 15px;
+      font-weight: 800;
       color: #ffffff;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      line-height: 1.3;
     }
 
     .sheet-product-cat {
       font-size: 11px;
+      font-weight: 700;
       color: var(--cyan-category);
-      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
     }
 
+    /* Store Routing Options */
     .sheet-options {
       display: flex;
       flex-direction: column;
@@ -571,12 +612,13 @@
 <body>
 
   <div class="container">
-    <!-- Brand Header -->
-<div class="avatar-wrapper">
-  <div class="brand-avatar">
-    <img src="logo.png" alt="TeeStreetLab Logo" class="avatar-img">
-  </div>
-</div>
+    <!-- Brand Header with Logo & Live Pulse Badge -->
+    <div class="avatar-wrapper">
+      <div class="brand-avatar">
+        <img src="logo.png" alt="TeeStreetLab Logo" class="avatar-img">
+      </div>
+      <div class="online-badge" title="Store Online & Active"></div>
+    </div>
 
     <h1 class="brand-name">TeeStreetLab</h1>
     <div class="brand-tagline">STREETWEAR & GRAPHIC APPAREL</div>
@@ -620,7 +662,7 @@
 
     <!-- 2-Column Product Grid -->
     <div class="product-grid" id="productGrid">
-      <!-- Cards rendered dynamically from products.json -->
+      <!-- Rendered dynamically from products.json -->
     </div>
 
     <!-- Footer -->
@@ -640,21 +682,24 @@
     </footer>
   </div>
 
-  <!-- Bottom Sheet Backdrop & Container -->
+  <!-- Bottom Sheet (Original Art Showcase & Regional Routing) -->
   <div class="sheet-backdrop" id="sheetBackdrop" onclick="closeBottomSheet()"></div>
   <div class="bottom-sheet" id="bottomSheet">
     <div class="sheet-handle"></div>
 
-    <div class="sheet-header">
-      <div class="sheet-thumb-box">
-        <img id="sheetMainImg" src="" alt="Product Thumbnail">
+    <!-- On-Demand Art Canvas -->
+    <div class="sheet-art-showcase">
+      <div class="sheet-art-canvas">
+        <span class="art-badge">ORIGINAL ART</span>
+        <img id="sheetArtImg" src="" alt="Artwork Preview" loading="lazy">
       </div>
-      <div class="sheet-text-info">
+      <div class="sheet-info-row">
         <div class="sheet-product-title" id="sheetProductTitle">Product Title</div>
         <div class="sheet-product-cat" id="sheetProductCat">Category</div>
       </div>
     </div>
 
+    <!-- Store Select Options -->
     <div class="sheet-options">
       <!-- Spreadshop (UK & Europe) -->
       <a id="sheetEuOption" href="#" target="_blank" rel="noopener" class="sheet-option-card">
@@ -689,7 +734,7 @@
     <button class="sheet-close-btn" onclick="closeBottomSheet()">Cancel</button>
   </div>
 
-  <!-- Dynamic Logic -->
+  <!-- Dynamic Logic & On-Demand Fetch -->
   <script>
     let allProducts = [];
     let currentCategory = 'all';
@@ -748,18 +793,23 @@
     }
 
     function openBottomSheet(item) {
-      document.getElementById('sheetMainImg').src = item.image;
+      // On-Demand Load: فقط عند النقر يتم طلب صورة التصميم الخام لضمان خفة وسرعة الموقع
+      const pureArt = (item.art_image && item.art_image.trim() !== "") ? item.art_image : item.image;
+      document.getElementById('sheetArtImg').src = pureArt;
       document.getElementById('sheetProductTitle').textContent = item.title;
       document.getElementById('sheetProductCat').textContent = item.category_label || 'TeeStreetLab Exclusive';
 
+      // Setup Spreadshop Option
       const euBtn = document.getElementById('sheetEuOption');
       euBtn.href = item.sp_url;
       document.getElementById('sheetEuImg').src = item.sp_image || item.image;
 
+      // Setup TeePublic Option
       const usBtn = document.getElementById('sheetUsOption');
       usBtn.href = item.tp_url;
       document.getElementById('sheetUsImg').src = item.tp_image || item.image;
 
+      // Display Sheet with Hardware Acceleration
       document.getElementById('sheetBackdrop').classList.add('open');
       document.getElementById('bottomSheet').classList.add('open');
       document.body.style.overflow = 'hidden';
