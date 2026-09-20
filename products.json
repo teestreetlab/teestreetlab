@@ -25,8 +25,21 @@
     "sp_url": "https://tee-street-lab.myspreadshop.com/sourdough+sweaters+and+spooky+season-A323d69d49e5aad09?sellable=ri5lrah2phxl-512&appearance=4",
     "sp_image": "SourdoughUS.jpg"
   },
-   {
+    {
   "id": 3,
+    "title": "Teacher By Day Pumpkin Spice Addict By Fall",
+    "category_label": "THE BOOK CLUB & COZY READS",
+    "category": "books",
+    "badge": "Tote Bag",
+    "image": "ByDay.jpg",
+    "art_image": "https://images.teepublic.com/derived/production/designs/99041359_0/1789852483/i_p:c_eae0c7,s_630,q_90.jpg",
+    "tp_url": "https://www.teepublic.com/tote/99041359-teacher-by-day-pumpkin-spice-addict-by-fall-cute-f",
+    "tp_image": "https://images.teepublic.com/derived/production/designs/99041359_0/1789852483/i_m:bi_production_blanks_n2pk899a8qrzxtz4tyvn_1507037313,c_81_123_846x,bc_eae0c7,s_630,q_90.jpg",
+    "sp_url": "https://tee-street-lab.myspreadshop.com/teacher+by+day+pumpkin+spice+addict+fall+educator-A32414ab3dd7593dc?sellable=rigcq2r947h8-842&appearance=77",
+    "sp_image": "ByDay.jpg"
+    },
+   {
+  "id": 4,
     "title": "Cozy Season Just Me & My Books",
     "category_label": "THE BOOK CLUB & COZY READS",
     "category": "books",
@@ -39,7 +52,7 @@
     "sp_image": ""
    }, 
   {
-  "id": 4,
+  "id": 5,
     "title": "Lost In The Fall Chapter",
     "category_label": "THE BOOK CLUB & COZY READS",
     "category": "books",
@@ -52,7 +65,7 @@
     "sp_image": ""
    },
   {
-  "id": 5,
+  "id": 6,
     "title": "Deadlifts&PumpkinSpice",
     "category_label": "Iron & Sweat Club",
     "category": "gym",
@@ -65,7 +78,7 @@
     "sp_image": ""
    },
   {
-  "id": 6,
+  "id": 7,
     "title": "Console.log('PumpkinSpice')",
     "category_label": "Dev Life & Coding Humor",
     "category": "tech",
