@@ -38,8 +38,21 @@
     "sp_url": "https://tee-street-lab.myspreadshop.com/teacher+by+day+pumpkin+spice+addict+fall+educator-A32414ab3dd7593dc?sellable=rigcq2r947h8-842&appearance=77",
     "sp_image": "ByDay.jpg"
     },
-   {
+    {
   "id": 4,
+    "title": "Pumpkin Basic Advanced Patience",
+    "category_label": "THE BOOK CLUB & COZY READS",
+    "category": "books",
+    "badge": "Mug",
+    "image": "https://images.teepublic.com/derived/production/designs/99031501_0/1789831025/i_m:bi_production_blanks_w00xdkhjelyrnp8i8wxr_1466696262,c_175_48_x705,bc_262c3a,s_630,q_90.jpg",
+     "art_image": "https://images.teepublic.com/derived/production/designs/99031501_0/1789831025/i_p:c_262c3a,s_630,q_90.jpg",
+    "tp_url": "https://www.teepublic.com/mug/99031501-pumpkin-basic-advanced-patience-cute-halloween-tea",
+    "tp_image": "https://images.teepublic.com/derived/production/designs/99031501_0/1789831025/i_m:bi_production_blanks_w00xdkhjelyrnp8i8wxr_1466696262,c_175_48_x705,bc_262c3a,s_630,q_90.jpg",
+    "sp_url": "https://tee-street-lab.myspreadshop.com/pumpkin+basic+advanced+patience+halloween+teacher-A3241493a7a140911?sellable=rigc5e50ype9-949&appearance=2",
+    "sp_image": "Mug.jpg"
+   }, 
+   {
+  "id": 5,
     "title": "Cozy Season Just Me & My Books",
     "category_label": "THE BOOK CLUB & COZY READS",
     "category": "books",
@@ -52,7 +65,7 @@
     "sp_image": ""
    }, 
   {
-  "id": 5,
+  "id": 6,
     "title": "Lost In The Fall Chapter",
     "category_label": "THE BOOK CLUB & COZY READS",
     "category": "books",
@@ -65,7 +78,7 @@
     "sp_image": "Lost.jpg"
    },
   {
-  "id": 6,
+  "id": 7,
     "title": "Deadlifts&PumpkinSpice",
     "category_label": "Iron & Sweat Club",
     "category": "gym",
@@ -78,7 +91,7 @@
     "sp_image": ""
    },
   {
-  "id": 7,
+  "id": 8,
     "title": "Console.log('PumpkinSpice')",
     "category_label": "Dev Life & Coding Humor",
     "category": "tech",
